@@ -31,7 +31,7 @@ public class MemberDao {
 		return jdbcTmp.update(delete, member.getM_id());
 	}
 	public int update(Member member, String id) {
-		return jdbcTmp.update(update, member.getM_id(), member.getM_pass(), member.getM_availability(), id);
+		return jdbcTmp.update(update, member.getM_id(), member.getM_pass(), member.isM_availability(), id);
 	}
 	public Member get(String m_id) {
 		return jdbcTmp.queryForObject(get, new Object[]{m_id}, new MemberMapper());
